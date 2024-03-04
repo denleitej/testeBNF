@@ -1,6 +1,19 @@
 # testeBNF realizado no BNF playground (https://bnfplayground.pauliankline.com/)
 
-<algoritmo> ::= "ALGORITMO " "\"" <nome_algoritmo> "\";" 
+<algoritmo> ::= "ALGORITMO " "\"" <name_convention> "\";\nVARIAVEIS\n" <var_declaration_section> "INICIO" <instruction_section> "\nFim do Algoritmo"
+
+<instruction_section> ::= "\n\t" "ESCREVA(' Informe o valor de A: ');" "\n\t" "LEIA(" <numero>+ ");" "\n\t" "ESCREVA(' Informe o valor de B: ');" "\n\t" "LEIA(" <numero>+ ");" "\n\t" "c <-- " <numero>+ "/" <numero>+ ";" "\n\t" "ESCREVA(' A divisao resulta em: ' , c);"
+
+
+<name_convention> ::= (<char>)+ (<char> | "_" | <numero>)*
+
+<var_declaration_section> ::= "\n" | <var_declaration>+
+
+<var_declaration> ::= "\t" <name_convention> (", " <name_convention>)* " : " <var_type> "\n"
+
+<var_type> ::= "Inteiro" | "Real" | "Logico" | "Texto"
+<operador> ::= "+" | "-" | "/" | "*"
+
 <upper_char> ::= [A-Z]
 <lower_char> ::= [a-z]
 <numero> ::= [0-9]
