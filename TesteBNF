@@ -1,0 +1,9 @@
+# testeBNF realizado no BNF playground (https://bnfplayground.pauliankline.com/)
+
+<algoritmo> ::= "ALGORITMO " "\"" <nome_algoritmo> "\";" 
+<upper_char> ::= [A-Z]
+<lower_char> ::= [a-z]
+<numero> ::= [0-9]
+<char> ::= <upper_char> | <lower_char>
+<underline> ::= "_"
+<nome_algoritmo> ::= (<char>)+ (<char> | <underline> | <numero>)*
